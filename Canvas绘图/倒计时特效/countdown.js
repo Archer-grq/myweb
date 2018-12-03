@@ -4,7 +4,7 @@ var RADIUS=8;
 var MARGIN_TOP=60;
 var MARGIN_LEFT=30;
 
-const endTime=new Date(2018,11,5,11,11,11);//倒计时停止时间
+//const endTime=new Date(2018,11,5,11,11,11);//倒计时停止时间
 var curShowTimeSeconds = 0;//存储倒计时的秒数
 
 var balls=[];
@@ -106,10 +106,8 @@ function addBalls(x,y,num) {
 //时间函数
 function getCurrentShowTimeSeconds(){
     var curTime=new Date();
-    var ret=endTime.getTime()-curTime.getTime();
-    ret=Math.round(ret/1000);//将毫秒转化成秒
-
-    return ret>=0?ret:0;
+    var ret=curTime.getHours()*3600+curTime.getMinutes()*60+curTime.getSeconds();
+    return ret;
 }
 
 //操作执行函数
