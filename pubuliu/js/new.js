@@ -19,7 +19,7 @@ window.onload=function(){
 			imgLocation("container","box");
 		}
 	}
-}
+};
 
 //加载新元素，获取新数据
 function checkFlag(){
@@ -61,9 +61,9 @@ function imgLocation(parent,content){
 
 //获取最小高度的水平位置
 function getMinHeightLocation(BoxHeightArr,MinHeight){
-	for(var i in BoxHeightArr){
-		if(BoxHeightArr[i]==MinHeight){
-			return i;
+	for(var nn in BoxHeightArr){
+		if(BoxHeightArr[nn]===MinHeight){
+			return nn;
 		}
 	}
 }
@@ -73,7 +73,7 @@ function getChildElement(parent,content){
 	var contentArr=[];
 	var allcontent=parent.getElementsByTagName("*");
 	for(var i=0;i<allcontent.length;i++){
-		if(allcontent[i].className==content){
+		if(allcontent[i].className === content){
 			contentArr.push(allcontent[i]);
 		}
 	}
