@@ -79,7 +79,7 @@ function updateBalls(){
     for(var i=0;i<balls.length;i++)
         if(balls[i].x+RADIUS>0&&balls[i].x-RADIUS<WINDOW_WIDTH)
             balls[cnt++]=balls[i]
-    while(balls.length>Math.min(300,cnt))
+    while(balls.length>cnt)
     balls.pop();
 }
 
