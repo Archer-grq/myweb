@@ -5,10 +5,12 @@
 }
 body{
     width:1520px;
+    background-color: #eeeeee;
 }
 a{
     text-decoration: none;
 }
+li{list-style: none}
 header{
     height:360px;
     width:1520px;
@@ -64,7 +66,7 @@ header{
     height: 78px;
     position: absolute;
     top: 14px;
-    right: 0px;
+    right:0;
 }
 #userimg{
     width:48px;
@@ -73,6 +75,7 @@ header{
     float: left;
     background:url("../img/cs_topbar.png");
     background-position:-305px -85px;
+    z-index:10;
 }
 #userimg div{
     margin-top:5px;
@@ -91,6 +94,7 @@ header{
     color: #cdbe91;
     font-size:16px;
     line-height:48px;
+    z-index:10;
 }
 #zmimg{
     position:absolute;
@@ -145,7 +149,6 @@ header{
     width: 50px;
     height:50px;
 }
-
 #zmimg:hover #dzp{
     display:block;
 }
@@ -155,10 +158,41 @@ header{
     width:160px;
     top: 288px;
     left:679px;
-    color: #c89b2f;
+    color: #cdbe91;
     line-height: 40px;
     background-color: rgba(0,0,0,.6);
-    border: 1px solid #c89b2f;
+    border: 2px inset #cdbe91;
+}
+#topimghref:hover{
+    background-color:rgba(0,0,0,.8);
+    color: #c89b2f;
+    border: 2px inset #c89b2f;
+}
+#ver{
+    width:255px;
+    height: 26px;
+    position: absolute;
+    right:81px;
+    top: 310px;
+    font-size: 14px;
+    color: #cccccc;
+}
+#vernum{
+    color: #cdbe91;
+    margin-left:8px;
+}
+#verhref{
+    color: #cdbe91;
+    margin-left:8px;
+    font-size: 13px;
+    padding: 3px 11px;
+    border: 2px inset #cdbe91;
+    background-color:rgba(0,0,0,.6);
+}
+#verhref:hover{
+    background-color:rgba(0,0,0,.8);
+    color: #c89b2f;
+    border: 2px inset #c89b2f;
 }
 #ull{
     display:none;
@@ -166,7 +200,167 @@ header{
     width:1520px;
     position:absolute;
     top:78px;
-    left:0;
+    left:-81px;
+    z-index: 9;
     background-color:rgba(0,0,0,.6);
 }
-
+#ull div{
+    height:250px;
+    width:1040px;
+    margin: auto auto;
+}
+#ull a{
+    color:#cccccc;
+    line-height: 30px;
+    font-size:14px;
+}
+#ull a:hover{
+    color:#c89b2f;
+}
+#ull ul{
+    margin-top:10px;
+    float:left;
+    width: 150px;
+}
+.h{
+    background:url("../img/cs_topbar.png") no-repeat ;
+    background-position:-376px -110px ;
+}
+.n{
+    background:url("../img/cs_topbar.png") no-repeat -358px -110px;
+}
+#userInfo{
+    display: none;
+    background-color:rgba(0,0,0,.6);
+    position:absolute;
+    width:300px;
+    height:340px;
+    top:-10px;
+    z-index:1;
+    right:-28px;
+}
+#userinfo-qv{
+    position:absolute;
+    top:78px;
+    width:300px;
+    height:25px;
+}
+.left{float:left;font-size:12px;color:#848383;line-height: 25px;margin-left:15px;background-color:#2f2d2d;padding:0 10px;}
+.left span{background:url("../img/cs_topbar.png") no-repeat -376px -65px;}
+.right{float:right;line-height: 25px;color:#cdbe91;margin-right:15px;}
+#WZlogo{
+    position:absolute;
+    height:130px;
+    width: 100px;
+    top:110px;
+    left:10px;
+    color:#cdbe91;
+}
+#WZlogo img{
+    height:100px;
+    width: 100px;
+}
+#zhanji{
+    position: absolute;
+    width:190px;
+    height:130px;
+    top:110px;
+    right:0;
+    float:left;
+}
+#zhanji li{
+    float:left;
+    width:95px;
+    height:65px;
+    color:#cdbe91;
+    padding-top:20px;
+}
+.zhanji-btm{
+    font-size:12px;
+    color:#848383;
+}
+#aa{
+    position: absolute;
+    width:300px;
+    height:25px;
+    top:270px;
+}
+#user-enter{
+    position:absolute;
+    bottom:0;
+    width:300px;
+    height:40px;
+    background-color:rgba(0,0,0,.8);
+    font-size:16px;
+    line-height: 40px;
+}
+#user-enter a{color:white;}
+#jiantou{
+    position: absolute;
+    width:50px;
+    height:30px;
+    bottom: 5px;
+    right:55px;
+}
+#container{
+    position: relative;
+    width: 1358px;
+    height:1230px;
+    margin:0 auto;
+    padding: 40px 0 80px 0;
+}
+#imgppt{
+    position: absolute;
+    height:380px;
+    width:820px;
+    left:0;
+    overflow: hidden;
+    z-index:2;
+}
+#imgppt-img{
+    position: absolute;
+    width: 5740px;
+}
+#imgppt-img li{
+    float:left;
+}
+#imgppt-info{
+    position: absolute;
+    width: 820px;
+    height:40px;
+    left:0;
+    bottom:0;
+}
+#imgppt-info li{
+    float: left;
+    line-height: 40px;
+    width:164px;
+    background-color:#e3e2e2;
+    font-size:14px;
+    color:#424242;
+}
+#leftbtn{
+    position:absolute;
+    height:60px;
+    width:30px;
+    left:20px;
+    top:140px;
+    z-index:5;
+}
+#rightbtn{
+    position:absolute;
+    height:60px;
+    width:30px;
+    right:20px;
+    top:140px;
+    z-index:5;
+}
+#leftbtn img,#rightbtn img{
+    height:60px;
+    width:30px;
+}
+#imgppt-info .on{
+    background-color:white;
+    border-bottom:2px solid #cea861;
+    color:#cea861;
+}
