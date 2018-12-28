@@ -3,15 +3,35 @@ $(document).ready(function(){
     //右侧菜单功能实现
     $(window).scroll(function () {
         var scolltop=$(window).scrollTop();
-        console.log(scolltop);
-        if(scolltop>350){
-
-            $("#right-nav").animate({bottom:0},300)
+        if(scolltop>250){
+            $("#right-nav").css("bottom","0px");
         }else{
-            $("#right-nav").animate({bottom:-60},10)
+            $("#right-nav").css("bottom","-60px")
         }
 
     });
+
+    //回到顶部功能实现
+    $(".ii6").click(function () {
+        $(window).scrollTop(0);
+    });
+
+    // function top(){
+    //     var nzv=$("#right-nav");
+    //     if(nzv.css("bottom")<0){
+    //         nzv.css("bottom",parseInt(nzv.css("bottom"))+2+"px");
+    //         setTimeout(top(),10)
+    //     }
+    //
+    // }
+    // function btm(){
+    //     var nzv=$("#right-nav");
+    //     if(nzv.css("bottom")>-60){
+    //         nzv.css("bottom",parseInt(nzv.css("bottom"))-2+"px");
+    //         setTimeout(btm(),10)
+    //     }
+    //
+    // }
 
     //实现最顶部二级菜单的显示与隐藏
     $("#top>ul>li").hover(function(){
