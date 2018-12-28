@@ -1,5 +1,18 @@
 $(document).ready(function(){
 
+    //右侧菜单功能实现
+    $(window).scroll(function () {
+        var scolltop=$(window).scrollTop();
+        console.log(scolltop);
+        if(scolltop>350){
+
+            $("#right-nav").animate({bottom:0},300)
+        }else{
+            $("#right-nav").animate({bottom:-60},10)
+        }
+
+    });
+
     //实现最顶部二级菜单的显示与隐藏
     $("#top>ul>li").hover(function(){
         $("#ull").show();
@@ -82,6 +95,13 @@ $(document).ready(function(){
         }
     }
 
+
+
+
+
+
+
+
     //图片切换动画
     function animate(offset){
         animated=true;
@@ -115,7 +135,7 @@ $(document).ready(function(){
     function stopstop(){
         clearInterval(timer);
     }
-    //下方按钮的显示
+//下方按钮的显示
     function showBtn(){
         for(var i=0;i<btnlist.length;i++){
             if(btnlist[i].className == "on"){
@@ -126,3 +146,6 @@ $(document).ready(function(){
         btnlist[index - 1].className='on';
     }
 });
+
+
+

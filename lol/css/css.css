@@ -507,3 +507,81 @@ header{
     font-size: 14px;
     color: #7ea1a6;
 }
+#right-div{
+    position:fixed;
+    left:1450px;
+    width:70px;
+    height:500px;
+    bottom:100px;
+    border-bottom-left-radius: 10px;
+    overflow: hidden;
+}
+#right-nav{
+    position:absolute;
+    width:70px;
+    height:360px;
+    background-color:white;
+    border-top-left-radius: 10px;
+    right:0;
+    bottom:-60px;
+
+}
+#right-nav li span{
+    display: block;
+    width: 70px;
+    height: 32px;
+    text-align: center;
+    line-height: 35px;
+}
+#right-nav span i{
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    vertical-align: middle;
+}
+#right-nav span i.bbotm{
+    width: 32px;
+    height: 32px;
+}
+#right-nav li{
+    display: block;
+    width: 70px;
+    height: 60px;
+    text-align: center;
+}
+#right-nav li a{
+    color: #92a8ab;
+    font-size: 12px;
+    text-align: center;
+    line-height: 28px;
+}
+.ii1{
+    background-image: url("../img/comm-spr.png");
+    background-repeat: no-repeat;
+    background-position: -242px -70px;
+}
+.ii2{
+    background-image: url("../img/comm-spr.png");
+    background-repeat: no-repeat;
+    background-position: -335px -45px;
+}
+.ii3{
+    background-image: url("../img/comm-spr.png");
+    background-repeat: no-repeat;
+    background-position: -291px -14px;
+}
+.ii4{
+    background-image: url("../img/comm-spr.png");
+    background-repeat: no-repeat;
+    background-position: -214px -96px;
+}
+.ii5{
+    background-image: url("../img/comm-spr.png");
+    background-repeat: no-repeat;
+    background-position: -220px -46px;
+}
+.ii6{
+    background-image: url("../img/comm-spr.png");
+    background-repeat: no-repeat;
+    background-position: -194px -12px;
+}
