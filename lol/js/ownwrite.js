@@ -2,11 +2,11 @@ $(document).ready(function(){
 
     //实现最顶部二级菜单的显示与隐藏
     $("#top>ul>li").hover(function(){
-        $("#ull").css("display","block");
+        $("#ull").show();
         $("#header-top").css("background-image","linear-gradient(to bottom,rgba(0,0,0,1),rgba(0,0,0,.6)");
     });
     $("#top>ul").hover(function(){},function () {
-        $("#ull").css("display","none");
+        $("#ull").hide();
         $("#header-top").css("background-image","linear-gradient(to bottom,rgba(0,0,0,1),rgba(255,255,255,0)")
     });
 
@@ -15,17 +15,35 @@ $(document).ready(function(){
         $("#userInfo").css("display","block");
     },function() {$("#userInfo").css("display","none")});
 
+    //轮播图使用到的标签
     var imgppt=$("#imgppt");
     var imgpptImg=$("#imgppt-img");
     var btnlist=$("#imgppt-info>ul>li");
     var next=$("#rightbtn");
     var prev=$("#leftbtn");
-    var index=1;
+    var animated=false;
+    var index=1;//用来存储当前图片的索引
+    var timer;
+
+    play();
 
 
+    //左右切换按钮的显示与隐藏
+    imgppt.hover(function(){
+        next.show();
+        prev.show();
+        stopstop();
+    },function(){
+        next.hide();
+        prev.hide();
+        play();
+    });
 
     //轮播图左右箭头的实现
     next.click(function(){
+        if(animated){
+            return;
+        }
         if(index == 5){
             index=1
         }
@@ -36,6 +54,9 @@ $(document).ready(function(){
         animate(-820);
     });
     prev.click(function(){
+        if(animated){
+            return ;
+        }
         if(index == 1){
             index=5;
         }
@@ -48,7 +69,10 @@ $(document).ready(function(){
 
     //底部按钮切换图片功能实现
     for(var i=0;i<btnlist.length;i++){
-        btnlist[i].onclick=function () {
+        btnlist[i].onmouseover=function () {
+            if(animated){
+                return ;
+            }
             var myindex=parseInt($(this).index())+1;
             console.log($(this).index());
             var offset=-820*(myindex-index);
@@ -60,16 +84,37 @@ $(document).ready(function(){
 
     //图片切换动画
     function animate(offset){
-        var left=imgpptImg.css('left');
-        imgpptImg.css('left',parseInt(left)+offset +'px');
-        if(parseInt(left)> -820){
-            imgpptImg.css('left','-4100'+'px');
-        }
-        if(parseInt(left)<-4100){
-            imgpptImg.css('left','-820'+'px');
+        animated=true;
+        var time=205;
+        var interval=5;
+        var speed=offset/(time/interval);//每次的位移量
+        var newleft=parseInt(imgpptImg.css('left'))+offset;
+        go();
+        //左右移动的动画
+        function go(){
+            if((speed<0&&parseInt(imgpptImg.css('left'))>newleft)||(speed>0&&parseInt(imgpptImg.css('left'))<newleft)){
+                imgpptImg.css('left',parseInt(imgpptImg.css('left'))+speed +'px');
+                setTimeout(go,interval);
+            }else{
+                animated=false;
+                if(newleft>-800){
+                    imgpptImg.css('left','-4100'+'px');
+                }
+                if(newleft<-4100){
+                    imgpptImg.css('left','-820'+'px');
+                }
+            }
         }
     }
 
+    function play(){
+        timer=setInterval(function(){
+            next.click();
+        },2000)
+    }
+    function stopstop(){
+        clearInterval(timer);
+    }
     //下方按钮的显示
     function showBtn(){
         for(var i=0;i<btnlist.length;i++){

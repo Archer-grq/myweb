@@ -10,7 +10,9 @@ body{
 a{
     text-decoration: none;
 }
-li{list-style: none}
+li{
+    list-style: none
+}
 header{
     height:360px;
     width:1520px;
@@ -245,9 +247,15 @@ header{
     width:300px;
     height:25px;
 }
-.left{float:left;font-size:12px;color:#848383;line-height: 25px;margin-left:15px;background-color:#2f2d2d;padding:0 10px;}
-.left span{background:url("../img/cs_topbar.png") no-repeat -376px -65px;}
-.right{float:right;line-height: 25px;color:#cdbe91;margin-right:15px;}
+.left{
+    float:left;font-size:12px;color:#848383;line-height: 25px;margin-left:15px;background-color:#2f2d2d;padding:0 10px;
+}
+.left span{
+    background:url("../img/cs_topbar.png") no-repeat -376px -65px;
+}
+.right{
+    float:right;line-height: 25px;color:#cdbe91;margin-right:15px;
+}
 #WZlogo{
     position:absolute;
     height:130px;
@@ -332,28 +340,37 @@ header{
     bottom:0;
 }
 #imgppt-info li{
+    height:40px;
     float: left;
-    line-height: 40px;
+    line-height: 30px;
     width:164px;
+    padding:5px 0;
     background-color:#e3e2e2;
     font-size:14px;
     color:#424242;
 }
 #leftbtn{
+    display: none;
     position:absolute;
     height:60px;
-    width:30px;
+    width:50px;
     left:20px;
     top:140px;
     z-index:5;
+    padding:0 5px;
 }
 #rightbtn{
+    display: none;
     position:absolute;
     height:60px;
-    width:30px;
+    width:50px;
     right:20px;
     top:140px;
+    padding:0 5px;
     z-index:5;
+}
+#leftbtn:hover,#rightbtn:hover{
+    background-color:rgba(0,0,0,.8);
 }
 #leftbtn img,#rightbtn img{
     height:60px;
@@ -361,6 +378,132 @@ header{
 }
 #imgppt-info .on{
     background-color:white;
-    border-bottom:2px solid #cea861;
+    box-sizing: border-box;
+    border-bottom:3px solid #cea861;
     color:#cea861;
+}
+#news{
+    position: absolute;
+    width:496px;
+    height:380px;
+    right:0;
+}
+#news-top{
+    width:496px;
+    height:34px;
+    overflow: visible;
+    box-sizing: border-box;
+    border-bottom: 1px #e0e2e2 solid;
+}
+#news-top li{
+    float:left;
+    width: 40px;
+    height:37px;
+    margin-right: 74px;
+    font-size: 18px;
+    text-align: center;
+    overflow: hidden;
+}
+#news-top .news-top-last{
+    margin-right: 0;
+}
+#news-top a{
+    line-height: 24px;
+    color:#676767;
+    letter-spacing: 1px;
+}
+#news-top .onthis a{
+    font-weight: 700;
+    color: #1da6ba;
+}
+#new-content li{
+    width: 496px;
+    line-height: 39px;
+    overflow: hidden;
+
+    text-align: center;
+}
+#new-content li.news-content-top{
+
+}
+#new-content .news-content-top{
+    background-position: 0 -458px;
+    width: 496px;
+    height: 59px;
+    overflow: hidden;
+    line-height: 59px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    box-sizing: border-box;
+    padding: 0 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #0da0b4;
+    border-top:none;
+}
+#new-content .new-list{
+    display: inline-block;
+    vertical-align: middle;
+    width: 370px;
+    height: 39px;
+    overflow: hidden;
+    margin-left: 20px;
+    color: #424242;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 39px;
+    text-align: left;
+    box-sizing: border-box;
+    border-top: 1px #e0e2e2 solid;
+}
+.news-after-new,.news-after-video,.news-after-sai{
+    display: inline-block;
+    vertical-align: middle;
+    width: 36px;
+    height: 20px;
+    box-sizing: border-box;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+}
+.news-after-new{
+    color: #bb9a6c;
+    border: 1px #c5ab86 solid;
+}
+.news-after-video{
+    color: #6388c5;
+    border: 1px #97afc5 solid;
+}
+.news-after-sai{
+    color: #e9852d;
+    border: 1px #e9852d solid;
+}
+.news-after-after{
+    overflow: hidden;
+    text-align: right;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #9d9d9d;
+}
+#new-content>ul>li>a:hover{
+    color: #be9a6c;
+}
+#morenews{
+    display: block;
+    width: 496px;
+    height: 40px;
+    background-color: #e3e2e2;
+    line-height: 40px;
+    text-align: center;
+}
+#morenews .c1{
+    font-size: 14px;
+    color: #676767;
+}
+#morenews .c2{
+    font-size: 14px;
+    color: #7ea1a6;
 }
