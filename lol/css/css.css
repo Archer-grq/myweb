@@ -399,7 +399,7 @@ header{
 #news-top li{
     float:left;
     width: 40px;
-    height:37px;
+    height:34px;
     margin-right: 74px;
     font-size: 18px;
     text-align: center;
@@ -416,6 +416,10 @@ header{
 #news-top .onthis a{
     font-weight: 700;
     color: #1da6ba;
+}
+#news-top li.onthis{
+    border-bottom: 2px solid #1da6ba;
+    box-sizing: border-box;
 }
 #new-content li{
     width: 496px;
@@ -460,7 +464,7 @@ header{
     box-sizing: border-box;
     border-top: 1px #e0e2e2 solid;
 }
-.news-after-new,.news-after-video,.news-after-sai{
+.news-after-new,.news-after-video,.news-after-sai,.news-after-chat,.news-after-teach{
     display: inline-block;
     vertical-align: middle;
     width: 36px;
@@ -488,6 +492,14 @@ header{
     font-size: 14px;
     letter-spacing: 1px;
     color: #9d9d9d;
+}
+.news-after-chat{
+    color: #bb9a6c;
+    border: 1px #c5ab86 solid;
+}
+.news-after-teach{
+    color: #4ba36a;
+    border: 1px #4ba36a solid;
 }
 #new-content>ul>li>a:hover{
     color: #be9a6c;
@@ -585,4 +597,10 @@ header{
     background-image: url("../img/comm-spr.png");
     background-repeat: no-repeat;
     background-position: -194px -12px;
+}
+.onshow{
+    display:block;
+}
+.notshow{
+    display:none;
 }

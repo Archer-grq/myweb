@@ -1,5 +1,7 @@
 $(document).ready(function(){
-
+    //右侧功能栏部分
+    //
+    //
     //右侧菜单功能实现
     $(window).scroll(function () {
         var scolltop=$(window).scrollTop();
@@ -16,23 +18,12 @@ $(document).ready(function(){
         $(window).scrollTop(0);
     });
 
-    // function top(){
-    //     var nzv=$("#right-nav");
-    //     if(nzv.css("bottom")<0){
-    //         nzv.css("bottom",parseInt(nzv.css("bottom"))+2+"px");
-    //         setTimeout(top(),10)
-    //     }
-    //
-    // }
-    // function btm(){
-    //     var nzv=$("#right-nav");
-    //     if(nzv.css("bottom")>-60){
-    //         nzv.css("bottom",parseInt(nzv.css("bottom"))-2+"px");
-    //         setTimeout(btm(),10)
-    //     }
-    //
-    // }
 
+
+
+    //顶部菜单部分
+    //
+    //
     //实现最顶部二级菜单的显示与隐藏
     $("#top>ul>li").hover(function(){
         $("#ull").show();
@@ -48,6 +39,12 @@ $(document).ready(function(){
         $("#userInfo").css("display","block");
     },function() {$("#userInfo").css("display","none")});
 
+
+
+
+    //轮播图部分
+    //
+    //
     //轮播图使用到的标签
     var imgppt=$("#imgppt");
     var imgpptImg=$("#imgppt-img");
@@ -57,10 +54,7 @@ $(document).ready(function(){
     var animated=false;
     var index=1;//用来存储当前图片的索引
     var timer;
-
     play();
-
-
     //左右切换按钮的显示与隐藏
     imgppt.hover(function(){
         next.show();
@@ -71,7 +65,6 @@ $(document).ready(function(){
         prev.hide();
         play();
     });
-
     //轮播图左右箭头的实现
     next.click(function(){
         if(animated){
@@ -107,20 +100,12 @@ $(document).ready(function(){
                 return ;
             }
             var myindex=parseInt($(this).index())+1;
-            console.log($(this).index());
             var offset=-820*(myindex-index);
             index=myindex;
             showBtn();
             animate(offset);
         }
     }
-
-
-
-
-
-
-
 
     //图片切换动画
     function animate(offset){
@@ -146,7 +131,6 @@ $(document).ready(function(){
             }
         }
     }
-
     function play(){
         timer=setInterval(function(){
             next.click();
@@ -165,7 +149,21 @@ $(document).ready(function(){
         }
         btnlist[index - 1].className='on';
     }
+
+
+    //新闻部分
+    //
+    //顶部菜单效果显示
+    $("#news-top>ul>li").each(function () {
+       $(this).bind('mouseover',function(){
+           $(this).addClass('onthis').siblings().removeClass('onthis');
+           showUl($(this).index());
+       })
+    });
+
+    //底部内容效果显示
+    function showUl(index) {
+        $("#new-content>ul").eq(index).removeClass('notshow').addClass('onshow').siblings().removeClass('onshow').addClass('notshow')
+    }
+
 });
-
-
-
