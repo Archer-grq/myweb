@@ -125,13 +125,9 @@ $(document).ready(function(){
     $("#news-top>ul>li").each(function () {
        $(this).bind('mouseover',function(){
            $(this).addClass('onthis').siblings().removeClass('onthis');
-           showUl($(this).index());
+           showUl($("#new-content>ul"),$(this).index());
        })
     });
-    //底部内容效果显示
-    function showUl(index) {
-        $("#new-content>ul").eq(index).removeClass('notshow').addClass('onshow').siblings().removeClass('onshow').addClass('notshow')
-    }
 
     //活动功能实现
     //
@@ -139,10 +135,11 @@ $(document).ready(function(){
     $("#act-top-ul>li").each(function () {
         $(this).bind('mouseover',function () {
             $(this).addClass('ononon').siblings().removeClass('ononon');
-            actshowUl($(this).index())
+            actshowUl($("#act-cotent>ul"),$(this).index())
         })
     });
-    function actshowUl(index) {
-        $(".act-cn-ul").eq(index).addClass('onshow').siblings().removeClass('onshow')
+    //显示UL
+    function showUl(ev,index) {
+        ev.eq(index).addClass('onshow').siblings().removeClass('onshow')
     }
 });
