@@ -128,10 +128,21 @@ $(document).ready(function(){
            showUl($(this).index());
        })
     });
-
     //底部内容效果显示
     function showUl(index) {
         $("#new-content>ul").eq(index).removeClass('notshow').addClass('onshow').siblings().removeClass('onshow').addClass('notshow')
     }
 
+    //活动功能实现
+    //
+    //
+    $("#act-top-ul>li").each(function () {
+        $(this).bind('mouseover',function () {
+            $(this).addClass('ononon').siblings().removeClass('ononon');
+            actshowUl($(this).index())
+        })
+    });
+    function actshowUl(index) {
+        $(".act-cn-ul").eq(index).addClass('onshow').siblings().removeClass('onshow')
+    }
 });
