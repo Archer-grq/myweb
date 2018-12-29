@@ -135,7 +135,7 @@ $(document).ready(function(){
     $("#act-top-ul>li").each(function () {
         $(this).bind('mouseover',function () {
             $(this).addClass('ononon').siblings().removeClass('ononon');
-            actshowUl($("#act-cotent>ul"),$(this).index())
+            showUl($("#act-cotent>ul"),$(this).index())
         })
     });
     //显示UL
