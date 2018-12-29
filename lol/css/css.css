@@ -152,9 +152,6 @@ header{
     width: 50px;
     height:50px;
 }
-#zmimg:hover #dzp{
-    display:block;
-}
 #topimghref{
     position:absolute;
     height:40px;
@@ -239,7 +236,7 @@ header{
     width:300px;
     height:340px;
     top:-10px;
-    z-index:1;
+    z-index:5;
     right:-28px;
 }
 #userinfo-qv{
@@ -303,7 +300,9 @@ header{
     font-size:16px;
     line-height: 40px;
 }
-#user-enter a{color:white;}
+#user-enter a{
+    color:white;
+}
 #jiantou{
     position: absolute;
     width:50px;
@@ -427,9 +426,6 @@ header{
     overflow: hidden;
 
     text-align: center;
-}
-#new-content li.news-content-top{
-
 }
 #new-content .news-content-top{
     background-position: 0 -458px;
@@ -603,4 +599,33 @@ header{
 }
 .notshow{
     display:none;
+}
+#right-nav li:hover span{
+     animation:jump ease 1.5s 1;
+}
+@keyframes jump {
+    10% {
+        transform: translateY(5px) scaleX(1.2) scaleY(.8);
+    }
+    30% {
+        transform: translateY(-13px) scaleX(1) scaleY(1) rotateZ(5deg);
+    }
+    50% {
+        transform: translateY(0) scale(1) rotateZ(0);
+    }
+    55% {
+        transform: translateY(0) scaleX(1.1) scaleY(.9) rotateZ(0);
+    }
+    70% {
+        transform: translateY(-4px) scaleX(1) scaleY(1) rotateZ(-2deg);
+    }
+    80% {
+        transform: translateY(0) scaleX(1) scaleY(1) rotateZ(0);
+    }
+    85% {
+        transform: translateY(0) scaleX(1.05) scaleY(.95) rotateZ(0);
+}
+    100% {
+        transform: translateY(0) scaleX(1) scaleY(1);
+    }
 }

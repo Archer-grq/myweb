@@ -12,13 +12,10 @@ $(document).ready(function(){
         }
 
     });
-
     //回到顶部功能实现
     $(".ii6").click(function () {
         $(window).scrollTop(0);
     });
-
-
 
 
     //顶部菜单部分
@@ -26,76 +23,64 @@ $(document).ready(function(){
     //
     //实现最顶部二级菜单的显示与隐藏
     $("#top>ul>li").hover(function(){
-        $("#ull").show();
         $("#header-top").css("background-image","linear-gradient(to bottom,rgba(0,0,0,1),rgba(0,0,0,.6)");
+        $("#ull").stop().slideDown(200);
     });
     $("#top>ul").hover(function(){},function () {
-        $("#ull").hide();
+        $("#ull").stop().slideUp(0);
         $("#header-top").css("background-image","linear-gradient(to bottom,rgba(0,0,0,1),rgba(255,255,255,0)")
     });
-
+    //掌盟图标显示隐藏
+    $("#zmimg").hover(function () {
+        $("#dzp").stop().fadeIn(400)
+    },function () {
+        $("#dzp").stop().fadeOut(400)
+    });
     //实现个人中心的现实与隐藏
     $("#user").hover(function () {
-        $("#userInfo").css("display","block");
-    },function() {$("#userInfo").css("display","none")});
-
+        $("#userInfo").stop().fadeIn(400);
+    },function() {$("#userInfo").stop().fadeOut(200)});
 
 
 
     //轮播图部分
     //
     //
-    //轮播图使用到的标签
-    var imgppt=$("#imgppt");
     var imgpptImg=$("#imgppt-img");
     var btnlist=$("#imgppt-info>ul>li");
-    var next=$("#rightbtn");
-    var prev=$("#leftbtn");
-    var animated=false;
-    var index=1;//用来存储当前图片的索引
+    var animated=false;//让轮播图动画播放完成之后才能播放下一个的参数
+    var index=1;//用来存储当前图片的索引从一开始
     var timer;
     play();
     //左右切换按钮的显示与隐藏
-    imgppt.hover(function(){
-        next.show();
-        prev.show();
+    $("#imgppt").hover(function(){
+        $("#rightbtn").show();
+        $("#leftbtn").show();
         stopstop();
     },function(){
-        next.hide();
-        prev.hide();
+        $("#rightbtn").hide();
+        $("#leftbtn").hide();
         play();
     });
     //轮播图左右箭头的实现
-    next.click(function(){
-        if(animated){
-            return;
-        }
-        if(index == 5){
-            index=1
-        }
-        else{
-            index+=1;
-        }
+    $("#rightbtn").click(function(){
+        if(animated){return;}
+        if(index === 5){index=1}
+        else{index+=1;}
         showBtn();
-        animate(-820);
+        animates(-820);
     });
-    prev.click(function(){
-        if(animated){
-            return ;
-        }
-        if(index == 1){
-            index=5;
-        }
-        else{
-            index-=1;
-        }
+    $("#leftbtn").click(function(){
+        if(animated){return ;}
+        if(index === 1){index=5;}
+        else{index-=1;}
         showBtn();
-        animate(820);
+        animates(820);
     });
 
-    //底部按钮切换图片功能实现
-    for(var i=0;i<btnlist.length;i++){
-        btnlist[i].onmouseover=function () {
+    //轮播图底部按钮绑定事件
+    btnlist.each(function () {
+        $(this).mouseover(function () {
             if(animated){
                 return ;
             }
@@ -103,53 +88,36 @@ $(document).ready(function(){
             var offset=-820*(myindex-index);
             index=myindex;
             showBtn();
-            animate(offset);
-        }
-    }
-
+            animates(offset);
+        });
+    });
     //图片切换动画
-    function animate(offset){
+    function animates(offset){
         animated=true;
-        var time=205;
-        var interval=5;
-        var speed=offset/(time/interval);//每次的位移量
         var newleft=parseInt(imgpptImg.css('left'))+offset;
-        go();
-        //左右移动的动画
-        function go(){
-            if((speed<0&&parseInt(imgpptImg.css('left'))>newleft)||(speed>0&&parseInt(imgpptImg.css('left'))<newleft)){
-                imgpptImg.css('left',parseInt(imgpptImg.css('left'))+speed +'px');
-                setTimeout(go,interval);
-            }else{
-                animated=false;
-                if(newleft>-800){
-                    imgpptImg.css('left','-4100'+'px');
-                }
-                if(newleft<-4100){
-                    imgpptImg.css('left','-820'+'px');
-                }
+        $("#imgppt-img").animate({"left":newleft},100,function () {
+            animated=false;
+            if(newleft>-800){
+                imgpptImg.css('left','-4100'+'px');
             }
-        }
+            if(newleft<-4100){
+                imgpptImg.css('left','-820'+'px');
+            }
+        })
     }
+    //自动播放功能的功能实现
     function play(){
         timer=setInterval(function(){
-            next.click();
+            $("#rightbtn").click();
         },2000)
     }
     function stopstop(){
         clearInterval(timer);
     }
-//下方按钮的显示
+    //下方按钮的显示
     function showBtn(){
-        for(var i=0;i<btnlist.length;i++){
-            if(btnlist[i].className == "on"){
-                btnlist[i].className = "";
-                break;
-            }
-        }
-        btnlist[index - 1].className='on';
+        btnlist.eq(index-1).addClass('on').siblings().removeClass('on')
     }
-
 
     //新闻部分
     //
