@@ -13,8 +13,13 @@ $(document).ready(function(){
 
     });
     //回到顶部功能实现
-    $(".ii6").click(function () {
+    var rightNavLi=$("#right-nav>ul>li");
+    rightNavLi.eq(5).click(function () {
         $(window).scrollTop(0);
+    });
+    //热门活动点击功能实现
+    rightNavLi.eq(0).click(function () {
+        $(window).scrollTop(750);
     });
 
 
@@ -28,7 +33,7 @@ $(document).ready(function(){
     });
     $("#top>ul").hover(function(){},function () {
         $("#ull").stop().slideUp(0);
-        $("#header-top").css("background-image","linear-gradient(to bottom,rgba(0,0,0,1),rgba(255,255,255,0)")
+        $("#header-top").css("background-image","linear-gradient(to bottom,rgba(0,0,0,9) 0%,rgba(0,0,0,.5) 70%,transparent 100%)")
     });
     //掌盟图标显示隐藏
     $("#zmimg").hover(function () {
@@ -142,4 +147,13 @@ $(document).ready(function(){
     function showUl(ev,index) {
         ev.eq(index).addClass('onshow').siblings().removeClass('onshow')
     }
+    //活动LI鼠标经过事件
+    $(".act-cn-li").each(function () {
+        $(this).hover(function () {
+            $(this).children(".act-cn-hide").fadeIn();
+        },function () {
+            $(this).children(".act-cn-hide").fadeOut();
+        })
+    })
+    //左侧浮动栏
 });

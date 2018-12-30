@@ -27,7 +27,7 @@ header{
     width:1520px;
     height:78px;
     position:relative;
-    background-image: linear-gradient(to bottom,rgba(0,0,0,1),rgba(255,255,255,.0));
+    background-image: linear-gradient(to bottom,rgba(0,0,0,9) 0%,rgba(0,0,0,.5) 70%,transparent 100%);
 }
 #top{
     position: relative;
@@ -600,32 +600,6 @@ header{
 #right-nav li:hover span{
      animation:jump ease 1.5s 1;
 }
-@keyframes jump {
-    10% {
-        transform: translateY(5px) scaleX(1.2) scaleY(.8);
-    }
-    30% {
-        transform: translateY(-13px) scaleX(1) scaleY(1) rotateZ(5deg);
-    }
-    50% {
-        transform: translateY(0) scale(1) rotateZ(0);
-    }
-    55% {
-        transform: translateY(0) scaleX(1.1) scaleY(.9) rotateZ(0);
-    }
-    70% {
-        transform: translateY(-4px) scaleX(1) scaleY(1) rotateZ(-2deg);
-    }
-    80% {
-        transform: translateY(0) scaleX(1) scaleY(1) rotateZ(0);
-    }
-    85% {
-        transform: translateY(0) scaleX(1.05) scaleY(.95) rotateZ(0);
-}
-    100% {
-        transform: translateY(0) scaleX(1) scaleY(1);
-    }
-}
 #act{
     position: absolute;
     width: 820px;
@@ -680,6 +654,7 @@ header{
     letter-spacing: 1px;
     line-height: 35px;
     text-align: center;
+    transform:translateY(0px);
 }
 .ononon{
     font-weight: 700;
@@ -704,9 +679,6 @@ header{
     width: 820px;
     height: 278px;
     margin-top: 21px;
-}
-.act-cn-ul{
-    display: none;
 }
 .act-cn-li{
     position: relative;
@@ -736,6 +708,41 @@ header{
     left: 10px;
     bottom: 6px;
 }
+.act-cn-hide{
+    display:none;
+    position: absolute;
+    width: 193px;
+    height: 207px;
+    top:0;
+    left:0;
+    background: rgba(0,0,0,.7) url("../img/comm-spr.png") no-repeat 2px 2px;
+    vertical-align: center;
+}
+.act-cn-hide div{
+    margin-top:65px;
+    padding:0 10px;
+}
+.act-hide-1{
+    font-size: 16px;
+    font-weight: 400;
+    padding-bottom: 5px;
+    letter-spacing: 1px;
+    color: #cdbe91;
+}
+.act-hide-2{
+    font-size: 12px;
+    color: #9d9c9c;
+    line-height: 17px;
+    letter-spacing: 1px;
+    overflow: hidden;
+}
+#act-cotent li:hover{
+    transform:translateY(-10px);
+    transition: all ease-in-out 0.3s;
+}
+#act-cotent li:hover .overtime{
+    color: #1da6ba;
+}
 #xiazai{
     position: absolute;
     width: 496px;
@@ -743,7 +750,140 @@ header{
     margin-top: 50px;
     right: 0;
     top:420px;
-    background-color: #1da6ba;
+}
+.xiazai-d{
+    display: block;
+    width: 366px;
+    height: 168px;
+    float: left;
+    background: url("../img/pic-download.png") no-repeat;
+    filter:brightness(100%);
+}
+.xiazai-p{
+    display: block;
+    width: 118px;
+    height: 76px;
+    float: left;
+    margin-left: 12px;
+    margin-top:16px;
+    background:url("../img/index-spr.png") no-repeat -193px -316px;
+}
+.xiazai-p a{
+    line-height: 76px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+}
+.xiazai-f{
+    margin-top:0;
+    position: relative;
+}
+.xiazai-ac{
+    width: 112px;
+    height: 68px;
+    float: left;
+    margin-top: 15px;
+    margin-left:16px;
+    background-color: white;
+}
+.xiazai-ac-1{
+    margin-left: 0;
+}
+.xiazai-wc{
+    width: 240px;
+    height: 68px;
+    float: left;
+    margin-top: 15px;
+    background-color: white;
+}
+.xiazai-wc a,.xiazai-ac a {
+    line-height: 68px;
+    color: #424242;
+    font-size: 13px;
+}
+#xiazai>div>i{
+    display: inline-block;
+    vertical-align: middle;
+    width: 25px;
+    height: 23px;
+    margin:-2px 0px 0 4px;
+    background-size: 393px 200px;
+}
+.xiazai-1{
+    background: url("../img/comm-spr.png") no-repeat -318px -12px;
+}
+.xiazai-2{
+    background: url("../img/comm-spr.png") no-repeat -188px -71px;
+}
+.xiazai-3{
+    background: url("../img/comm-spr.png") no-repeat -216px -71px;
+}
+.xiazai-4{
+    background: url("../img/comm-spr.png") no-repeat -264px -13px;
+}
+.xiazai-5{
+    background: url("../img/comm-spr.png") no-repeat -231px -12px;
+}
+.xiazai-6{
+    background: url("../img/comm-spr.png") no-repeat -319px -68px;
+}
+.xiazai-7{
+    background: url("../img/comm-spr.png") no-repeat -370px -12px;
+}
+.xiazai-f-hide{
+    position:absolute;
+    top:0;
+    left:0;
+    display:none;
+    background-color:white;
+    width: 118px;
+    height: 76px;
+}
+.xiazai-f-hide div{
+    vertical-align: middle;
+    float: left;
+    box-sizing: border-box;
+    height: 76px;
+    width:59px;
+    border: 1px solid #ccc;
+    align-content: center;
+}
+.xiazai-f-hide div i{
+    margin-top:15px;
+    display: inline-block;
+    width: 20px;
+    height: 23px;
+    background-size: 393px 200px;
+}
+.xiazai-f-hide div a{
+    display: inline-block;
+    width: 59px;
+    line-height: 15px;
+    color: #424242;
+    font-size: 13px;
+    text-align: center;
+}
+.xiazai-hide-1{
+     background: url("../img/comm-spr.png") no-repeat -193px -96px;
+ }
+.xiazai-hide-2{
+    background: url("../img/comm-spr.png") no-repeat -217px -96px;
+}
+.xiazai-ac:hover a,.xiazai-wc:hover a,.xiazai-f-hide div:hover a{s
+    color:#0da0b4;
+}
+.xiazai-ac:hover i,.xiazai-wc:hover i,.xiazai-f-hide div:hover i{
+    animation: bigsmall ease-in-out 0.5s 1;
+}
+.xiazai-ac:hover,.xiazai-wc:hover{
+    box-shadow: 0 0 4px 2px #ccc;
+    border-radius: 5px;
+}
+.xiazai-d:hover,.xiazai-p:hover{
+    filter:brightness(120%);
+}
+.xiazai-p:hover .xiazai-f-hide{
+    display: block;
 }
 #video{
     position: absolute;
@@ -766,3 +906,47 @@ header{
 .onshow{
     display:block;
 }
+@keyframes jump {
+    10% {
+        transform: translateY(5px) scaleX(1.2) scaleY(.8);
+    }
+    30% {
+        transform: translateY(-13px) scaleX(1) scaleY(1) rotateZ(5deg);
+    }
+    50% {
+        transform: translateY(0) scale(1) rotateZ(0);
+    }
+    55% {
+        transform: translateY(0) scaleX(1.1) scaleY(.9) rotateZ(0);
+    }
+    70% {
+        transform: translateY(-4px) scaleX(1) scaleY(1) rotateZ(-2deg);
+    }
+    80% {
+        transform: translateY(0) scaleX(1) scaleY(1) rotateZ(0);
+    }
+    85% {
+        transform: translateY(0) scaleX(1.05) scaleY(.95) rotateZ(0);
+    }
+    100% {
+        transform: translateY(0) scaleX(1) scaleY(1);
+    }
+}
+@keyframes bigsmall {
+    0%{
+        transform: scale(1);
+    }
+    15%{
+        transform: scale(0.8);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    75%{
+        transform: scale(0.8);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
