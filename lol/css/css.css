@@ -566,6 +566,10 @@ header{
     font-size: 12px;
     text-align: center;
     line-height: 28px;
+    transition: all ease-in-out 0.5s;
+}
+#right-nav li:hover span{
+    animation: jump ease 1.5s 1;
 }
 .ii1{
     background-image: url("../img/comm-spr.png");
@@ -596,9 +600,6 @@ header{
     background-image: url("../img/comm-spr.png");
     background-repeat: no-repeat;
     background-position: -194px -12px;
-}
-#right-nav li:hover span{
-     animation:jump ease 1.5s 1;
 }
 #act{
     position: absolute;
@@ -892,7 +893,15 @@ header{
     width: 820px;
     height: 254px;
     margin-top: 51px;
-    background-color: #1da6ba;
+}
+#video div{
+    width: 402px;
+    height: 254px;
+    background-color: red;
+    float:left;
+}
+#video div:nth-child(1){
+    margin-right: 16px;
 }
 #vernav{
     position: absolute;
@@ -901,7 +910,29 @@ header{
     width: 496px;
     height: 254px;
     margin-top: 51px;
-    background-color: #1da6ba;
+}
+.ver-02{
+    width:240px;
+    height:120px;
+    margin:0 16px 15px 0;
+}
+.ver-01{
+    float: right;
+    width:240px;
+    height:180px;
+}
+.ver-03{
+    width:240px;
+    height:120px;
+    margin-bottom: 15px;
+}
+.ver-04{
+    position: absolute;
+    width: 239px;
+    height: 58px;
+    bottom: 0;
+    right: 0;
+    background:url("../img/index-spr.png") no-repeat -193px -253px;
 }
 .onshow{
     display:block;

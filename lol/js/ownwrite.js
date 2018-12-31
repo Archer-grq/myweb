@@ -5,21 +5,40 @@ $(document).ready(function(){
     //右侧菜单功能实现
     $(window).scroll(function () {
         var scolltop=$(window).scrollTop();
+        //回到顶部按钮的出现和隐藏
         if(scolltop>250){
             $("#right-nav").css("bottom","0px");
         }else{
             $("#right-nav").css("bottom","-60px")
         }
 
+        if(scolltop>=450 && scolltop<1100){
+
+            $("#right-nav>ul>li").eq(0).find('a').css({"color":"#1da6ba","font-weight":"900"}).end().trigger('myclick')//模拟动画
+        }else{
+            $("#right-nav>ul>li").eq(0).find('a').css({"color":"#92a8ab","font-weight":"400"})
+        }
     });
     //回到顶部功能实现
     var rightNavLi=$("#right-nav>ul>li");
     rightNavLi.eq(5).click(function () {
         $(window).scrollTop(0);
     });
-    //热门活动点击功能实现
+    //热门活点击动功能实现
     rightNavLi.eq(0).click(function () {
         $(window).scrollTop(750);
+    }).end().eq(0).bind('myclick',function () {   // 当页面滚动到热门活动时触发一次小图标的动画
+        $(this).find('span').css({"animation":""});
+        $(this).find('span').css({"animation":"bigsmall 0.5s ease-in-out 1"});
+        setTimeout(function () {
+            rightNavLi.eq(0).find('span').css({"animation":""});
+        },500)
+    });
+    //右侧固定导航栏HOVER效果
+    $("#right-nav li").hover(function () {
+        $(this).find('a').css({"color":"#1da6ba","font-weight":"900",'letter-spacing':'2'})
+    },function () {
+        $(this).find('a').css({"color":"#92a8ab","font-weight":"400"})
     });
 
 
