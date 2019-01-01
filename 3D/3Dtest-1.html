@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3D效果</title>
+    <script src="../jQuary/jquery-3.3.1.js"></script>
+    <style>
+        *{
+          margin:0;
+            padding:0;
+        }
+        #box{
+            width:640px;
+            height:800px;
+            margin: 0 auto;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        ul{
+            float: left;
+            margin:200px 60px 0 60px;
+            width: 200px;
+            height:200px;
+            position:relative;
+            transform-style: preserve-3d;
+            transform: rotateX(15deg) rotateY(15deg);
+
+        }
+        ul li{
+            width: 200px;
+            height:200px;
+            position:absolute;
+            top:0;
+            left:0;
+            list-style: none;
+            color: black;
+            font-size: 50px;
+            text-align: center;
+            line-height: 200px;
+        }
+        ul li:nth-child(1){
+            background-color:red;
+            transform: translateX(100px) rotateY(90deg);
+        }
+        ul li:nth-child(2){
+            background-color:beige;
+            transform: translateX(-100px) rotateY(90deg);
+        }
+        ul li:nth-child(3){
+            background-color:yellow;
+            transform:translateY(100px) rotateX(90deg);
+        }
+        ul li:nth-child(4){
+            background-color:brown;
+            transform:translateY(-100px) rotateX(90deg);
+        }
+        ul li:nth-child(5){
+            background-color:gold;
+            transform:translateZ(100px);
+        }
+        ul li:nth-child(6){
+            background-color:green;
+            transform: translateZ(-100px);
+        }
+    </style>
+    <script language="JavaScript">
+        $(window).ready(function () {
+            $(document).mousemove(function (e) {
+                var x=-e.clientX;
+                var y=-e.clientY;
+                $("#box>ul").css("transform","rotateX("+y+"deg)"+""+"rotateY("+x+"deg)");
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+</body>
+</html>
