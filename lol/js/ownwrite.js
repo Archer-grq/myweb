@@ -13,9 +13,15 @@ $(document).ready(function(){
         }
         //当滚动条滚动到活动相应区域时右侧菜单栏活动按钮的样式改变
         if(scolltop>=450 && scolltop<1100){
-            $("#right-nav>ul>li").eq(0).find('a').css({"color":"#1da6ba","font-weight":"900"}).end().trigger('myclick')//模拟事件myclick
+            $("#right-nav>ul>li").eq(0)
+                                 .find('a')
+                                 .css({"color":"#1da6ba","font-weight":"900"})
+                                 .end()
+                                 .trigger('myclick')//模拟事件myclick
         }else{
-            $("#right-nav>ul>li").eq(0).find('a').css({"color":"#92a8ab","font-weight":"400"})
+            $("#right-nav>ul>li").eq(0)
+                                 .find('a')
+                                 .css({"color":"#92a8ab","font-weight":"400"})
         }
     });
     //回到顶部功能实现
@@ -24,17 +30,21 @@ $(document).ready(function(){
         $(window).scrollTop(0);
     });
     //热门活点击功能实现与动画的实现
-    rightNavLi.eq(0).click(function () {
-        $(window).scrollTop(750);
-    }).end().eq(0).bind('myclick',function () {
-        // 当页面滚动到热门活动时触发一次小图标的动画
-        $(this).find('span').css({"animation":""});
-        $(this).find('span').css({"animation":"bigsmall 0.5s ease-in-out 1"});
-        //动画完成后改变css样式方便下一次动画
-        setTimeout(function () {
-            rightNavLi.eq(0).find('span').css({"animation":""});
-        },500)
-    });
+    rightNavLi.eq(0)
+              .click(function () {
+                 $(window).scrollTop(750);
+               })
+              .end()
+              .eq(0)
+              .bind('myclick',function () {
+                // 当页面滚动到热门活动时触发一次小图标的动画
+                $(this).find('span').css({"animation":""});
+                $(this).find('span').css({"animation":"bigsmall 0.5s ease-in-out 1"});
+                //动画完成后改变css样式方便下一次动画
+                setTimeout(function () {
+                    rightNavLi.eq(0).find('span').css({"animation":""});
+                },500)
+              });
     //右侧固定导航栏HOVER效果
     $("#right-nav li").hover(function () {
         $(this).find('a').css({"color":"#1da6ba","font-weight":"900",'letter-spacing':'2'})
